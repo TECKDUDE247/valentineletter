@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Letter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #d291bc, #f5a9bc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 25px;
+      max-width: 700px;
+      box-shadow: 0 0 30px rgba(255, 192, 203, 0.6);
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px #d291bc;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Floating hearts animation */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { transform: translateY(-1000px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="letter">
+    <h1>To Nevaeh ❤️</h1>
+    <p>
+      Nevaeh, I know you go through so much, even when you don’t always show it. I know that sometimes I’ve added to your stress instead of taking it away, and I’m truly sorry for that. You don’t deserve the heaviness you’ve been carrying or the way you’ve been feeling lately. It hurts knowing you feel like you have to hide parts of yourself or pretend you’re okay just to get through the day.
+    </p>
+    <p>
+      I wish I could take some of that weight off your shoulders. I hope that soon everything starts to feel lighter for you — that you wake up and don’t feel that pressure in your chest, that you can laugh without forcing it, and that you can enjoy your life without hiding your feelings. You deserve to feel understood, safe, and genuinely happy.
+    </p>
+    <p>
+      And when things get really hard, when you start to feel like you have no one and the easiest thing feels like pulling away and isolating yourself, please remember this: you are not alone. Even if you shut everyone out, even if you convince yourself that no one notices or cares, I do. I care more than you probably realize. You don’t have to go through the dark moments by yourself. You don’t have to carry everything silently.
+    </p>
+    <p>
+      If you ever feel like disappearing for a while, just know there is still someone here who sees you, who values you, and who wants to stand beside you — not just when things are easy, but especially when they aren’t. You matter. Your feelings matter. And you deserve support, even on the days when you feel like you don’t.
+    </p>
+  </div>
+
+  <!-- Generate multiple hearts -->
+  <script>
+    for(let i=0; i<30; i++){
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      heart.style.width = (15 + Math.random() * 20) + 'px';
+      heart.style.height = heart.style.width;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
